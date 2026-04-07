@@ -6,7 +6,7 @@ author: Mousa Abu Mazin
 license: MIT
 platforms: [linux, macos]
 prerequisites:
-  commands: [curl]
+  commands: [curl, jq]
   env_vars: []
 metadata:
   hermes:
