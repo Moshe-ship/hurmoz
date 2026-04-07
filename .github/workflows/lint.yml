@@ -1,0 +1,37 @@
+name: Skill Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run skill linter
+        run: bash lint.sh
+
+      - name: Check for hardcoded secrets
+        run: |
+          if grep -rE '(sk-[a-zA-Z0-9]{20,}|Bearer [a-zA-Z0-9]{20,})' --include="*.md" .; then
+            echo "FAIL: hardcoded secrets found"
+            exit 1
+          fi
+          echo "PASS: no secrets"
+
+      - name: Check no duplicate skill names
+        run: |
+          names=$(grep -rh "^name:" */SKILL.md | sort)
+          dupes=$(echo "$names" | uniq -d)
+          if [ -n "$dupes" ]; then
+            echo "FAIL: duplicate skill names: $dupes"
+            exit 1
+          fi
+          echo "PASS: no duplicates"

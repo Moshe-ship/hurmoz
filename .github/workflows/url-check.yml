@@ -1,0 +1,44 @@
+name: URL Health Check
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday 6am UTC
+  workflow_dispatch:
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract and check API URLs
+        run: |
+          echo "Checking vendor endpoint health..."
+          urls=(
+            "https://api.aladhan.com/v1/timingsByCity?city=Riyadh&country=SA&method=4"
+            "https://api.alquran.cloud/v1/search/bismillah/all/en"
+            "https://api.hadith.gading.dev/books"
+            "https://api.open-meteo.com/v1/forecast?latitude=24.7&longitude=46.7&current_weather=true"
+            "https://od.data.gov.sa/api/3/action/package_list"
+            "https://api.duckduckgo.com/?q=test&format=json"
+            "https://api.twelvedata.com/quote?symbol=2222.SAU&apikey=demo"
+          )
+
+          failed=0
+          for url in "${urls[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
+            if [ "$status" -ge 200 ] && [ "$status" -lt 400 ]; then
+              echo "  OK ($status): $url"
+            else
+              echo "  FAIL ($status): $url"
+              failed=$((failed+1))
+            fi
+          done
+
+          echo ""
+          echo "Failed: $failed / ${#urls[@]}"
+
+          if [ "$failed" -gt 3 ]; then
+            echo "Too many endpoint failures — check vendor availability"
+            exit 1
+          fi

@@ -123,3 +123,8 @@ fi
 
 [ "$FAIL" -gt 0 ] && exit 1
 exit 0
+
+# Accepted exceptions (documented, not bugs)
+# saudi-address: 182 words — concise API reference, intentionally short
+# saudi-identity: $YOUR_NAFATH_BASE_URL / $YOUR_YAKEEN_BASE_URL — intentional
+#   placeholders for licensed-access APIs, not env vars to declare
