@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [MASDR_TOKEN, QIWA_TOKEN, MUSANED_TOKEN]
 metadata:
   hermes:
     tags: [saudi, hr, employment, masdr, mudad, qiwa, musaned, gosi, wps]

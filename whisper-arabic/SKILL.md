@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [whisper, ffmpeg]
-  env_vars: []
+  env_vars: [OPENAI_API_KEY]
 metadata:
   hermes:
     tags: [media, speech-to-text, whisper, arabic]

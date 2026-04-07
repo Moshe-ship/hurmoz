@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [HF_TOKEN]
 metadata:
   hermes:
     tags: [media, ocr, arabic, image]

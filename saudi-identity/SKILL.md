@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [NAFATH_TOKEN, YAKEEN_TOKEN]
 metadata:
   hermes:
     tags: [saudi, identity, nafath, yakeen, verification]

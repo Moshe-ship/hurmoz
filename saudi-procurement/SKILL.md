@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [ETIMAD_SUBSCRIPTION_KEY]
 metadata:
   hermes:
     tags: [arabic, saudi-procurement]

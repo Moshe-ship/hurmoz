@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [LAHAJATI_API_KEY]
 metadata:
   hermes:
     tags: [arabic, saudi-tts]

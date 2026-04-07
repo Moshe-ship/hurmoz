@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [MOYASAR_API_KEY, TAP_SECRET_KEY, HYPERPAY_TOKEN, PAYTABS_SERVER_KEY, TABBY_API_KEY, TAMARA_TOKEN]
 metadata:
   hermes:
     tags: [arabic, saudi-pay]

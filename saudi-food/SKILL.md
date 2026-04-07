@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [FOODICS_TOKEN, HUNGERSTATION_TOKEN]
 metadata:
   hermes:
     tags: [saudi, food, restaurant, delivery, pos]

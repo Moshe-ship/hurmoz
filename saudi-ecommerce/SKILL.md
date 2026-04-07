@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [SALLA_TOKEN, ZID_TOKEN, NOON_TOKEN]
 metadata:
   hermes:
     tags: [saudi, ecommerce, salla, zid, noon, store, orders, products]

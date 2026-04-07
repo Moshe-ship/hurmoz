@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [LEAN_APP_TOKEN, ALRAJHI_TOKEN, ALINMA_TOKEN, ANB_TOKEN]
 metadata:
   hermes:
     tags: [saudi, openbanking, sama, lean, banking, fintech, ais, pis]

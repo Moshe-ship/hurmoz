@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [UNIFONIC_APP_SID]
 metadata:
   hermes:
     tags: [arabic, unifonic]

@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: []
+  env_vars: [SMSA_PASSKEY, ARAMEX_USERNAME, ARAMEX_PASSWORD, BARQ_API_KEY]
 metadata:
   hermes:
     tags: [arabic, saudi-shipping]
@@ -273,7 +273,7 @@ export JT_PRIVATE_KEY=your_key
 المصادقة تتم عبر MD5 digest signing:
 ```bash
 # حساب التوقيع
-DIGEST=$(echo -n '{"orderNo":"ORDER_123"}'"$JT_PRIVATE_KEY" | md5)
+DIGEST=$(echo -n '{"orderNo":"ORDER_123"}'"$JT_PRIVATE_KEY" | md5sum)
 
 curl -s -X POST "https://openapi.jet.co.id/jts-open-api/order/create" \
   -H "Content-Type: application/x-www-form-urlencoded" \
@@ -285,7 +285,7 @@ curl -s -X POST "https://openapi.jet.co.id/jts-open-api/order/create" \
 
 ### تتبع شحنة
 ```bash
-DIGEST=$(echo -n '{"billCodes":"AWB_NUMBER"}'"$JT_PRIVATE_KEY" | md5)
+DIGEST=$(echo -n '{"billCodes":"AWB_NUMBER"}'"$JT_PRIVATE_KEY" | md5sum)
 
 curl -s -X POST "https://openapi.jet.co.id/jts-open-api/trace/query" \
   -H "Content-Type: application/x-www-form-urlencoded" \
