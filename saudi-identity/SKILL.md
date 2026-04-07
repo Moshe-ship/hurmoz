@@ -16,25 +16,33 @@ metadata:
 
 دليل التكامل مع خدمات التحقق من الهوية الرقمية في المملكة العربية السعودية.
 
+> **تنبيه مهم**: واجهات نفاذ ويقين البرمجية تتطلب ترخيصاً رسمياً. لا تستخدم أرقام هوية وطنية حقيقية في بيئة التطوير أو الاختبار. استخدم فقط أرقام الاختبار التي توفرها الجهة المرخِّصة ضمن بيئة الـ Sandbox. احذف السجلات بعد الانتهاء.
+
 ---
 
 ## نفاذ (Nafath) — الهوية الرقمية الوطنية
 
 نفاذ هو نظام الهوية الرقمية الوطني الذي يوفر مصادقة متعددة العوامل (MFA) للخدمات الحكومية والخاصة.
 
-### الإعداد
+### الحصول على الترخيص (مطلوب)
 
-يتطلب الحصول على رخصة TCC من شركة TCC-ICT:
+يتطلب الوصول لواجهات نفاذ البرمجية ترخيصاً من شركة TCC-ICT:
 
-- موقع الرخصة: https://tcc-ict.com
-- بعد الحصول على الرخصة، ستحصل على `Bearer Token` للمصادقة
+1. **تقديم طلب ترخيص**: https://tcc-ict.com
+2. **التسجيل في منصة المطورين**: https://developer.tcc-ict.com
+3. بعد الموافقة، ستحصل على بيانات الوصول لبيئة الـ Sandbox أولاً
+4. بعد اجتياز اختبارات التكامل، يُفعّل الوصول لبيئة الإنتاج
+5. ستحصل على `Bearer Token` للمصادقة
+
+> **ملاحظة**: عنوان الـ API الفعلي يُقدَّم ضمن وثائق الترخيص بعد الموافقة. لا يوجد عنوان عام — كل مرخَّص له بيئة خاصة.
 
 ### واجهات نفاذ البرمجية
 
 #### 1. إنشاء طلب مصادقة
 
 ```bash
-curl -X POST "https://nafath-api-endpoint/ExtNafath/request" \
+# عنوان الـ API يُقدَّم مع الترخيص — استبدل YOUR_NAFATH_BASE_URL
+curl -X POST "${YOUR_NAFATH_BASE_URL}/ExtNafath/request" \
   -H "Authorization: Bearer ${NAFATH_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -48,7 +56,7 @@ curl -X POST "https://nafath-api-endpoint/ExtNafath/request" \
 #### 2. التحقق من حالة الطلب
 
 ```bash
-curl -X POST "https://nafath-api-endpoint/ExtNafath/status" \
+curl -X POST "${YOUR_NAFATH_BASE_URL}/ExtNafath/status" \
   -H "Authorization: Bearer ${NAFATH_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -61,7 +69,7 @@ curl -X POST "https://nafath-api-endpoint/ExtNafath/status" \
 #### 3. جلب بيانات المستخدم بعد التحقق
 
 ```bash
-curl -X GET "https://nafath-api-endpoint/ExtNafath/details/TRANSACTION_ID" \
+curl -X GET "${YOUR_NAFATH_BASE_URL}/ExtNafath/details/TRANSACTION_ID" \
   -H "Authorization: Bearer ${NAFATH_TOKEN}"
 ```
 
@@ -79,10 +87,16 @@ github.com/mohamad-zatar/saudi-nafath-integration
 
 يقين هي خدمة من شركة علم للتحقق من بيانات المواطنين والمقيمين.
 
-### الإعداد
+### الحصول على الترخيص (مطلوب)
 
-- يتطلب عقد مع شركة علم (elm.sa)
-- يوفر واجهات SOAP و REST
+يتطلب الوصول لواجهات يقين عقداً رسمياً مع شركة علم:
+
+1. **التقديم عبر موقع علم**: https://elm.sa
+2. **بوابة المطورين**: https://developer.elm.sa
+3. يتطلب سجل تجاري سعودي ساري
+4. بعد التعاقد، يتم توفير بيانات الوصول لبيئة الاختبار ثم الإنتاج
+
+> **ملاحظة**: عنوان الـ API الفعلي يُقدَّم ضمن وثائق العقد. لا يوجد عنوان عام.
 
 ### الطرق المتاحة
 
@@ -94,7 +108,8 @@ github.com/mohamad-zatar/saudi-nafath-integration
 ### مثال استدعاء (REST)
 
 ```bash
-curl -X POST "https://yakeen-api-endpoint/api/v1/CitizenInfo" \
+# عنوان الـ API يُقدَّم مع العقد — استبدل YOUR_YAKEEN_BASE_URL
+curl -X POST "${YOUR_YAKEEN_BASE_URL}/api/v1/CitizenInfo" \
   -H "Authorization: Bearer ${YAKEEN_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -104,7 +119,7 @@ curl -X POST "https://yakeen-api-endpoint/api/v1/CitizenInfo" \
 ```
 
 ```bash
-curl -X POST "https://yakeen-api-endpoint/api/v1/AlienInfoByIqama" \
+curl -X POST "${YOUR_YAKEEN_BASE_URL}/api/v1/AlienInfoByIqama" \
   -H "Authorization: Bearer ${YAKEEN_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -148,5 +163,7 @@ postman.com/crimson-crater-793597/yakeen-collection/
 - توثيق نفاذ: https://documentation.azakaw.com/docs/apis/core/nafath
 - حزمة نفاذ: https://github.com/mohamad-zatar/saudi-nafath-integration
 - شركة علم: https://elm.sa
+- بوابة مطوري علم: https://developer.elm.sa
 - رخصة TCC: https://tcc-ict.com
+- بوابة مطوري TCC: https://developer.tcc-ict.com
 - مجموعة يقين Postman: https://postman.com/crimson-crater-793597/yakeen-collection/

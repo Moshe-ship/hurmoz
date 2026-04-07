@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: [MOYASAR_API_KEY, TAP_SECRET_KEY, HYPERPAY_TOKEN, PAYTABS_SERVER_KEY, TABBY_API_KEY, TAMARA_TOKEN]
+  env_vars: [MOYASAR_API_KEY, TAP_SECRET_KEY, HYPERPAY_TOKEN, PAYTABS_SERVER_KEY, PAYTABS_PROFILE_ID, TABBY_API_KEY, TAMARA_TOKEN]
 metadata:
   hermes:
     tags: [arabic, saudi-pay]
@@ -15,6 +15,8 @@ metadata:
 
 
 # بوابات الدفع السعودية
+
+> **تنبيه:** استخدم بيانات اختبار فقط. لا تستخدم هويات وطنية حقيقية أو توكنات دفع حية أثناء التجربة. استخدم بيئة الاختبار (sandbox) دائماً. احذف السجلات بعد الانتهاء.
 
 دليل شامل لربط بوابات الدفع المتاحة في المملكة العربية السعودية.
 

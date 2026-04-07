@@ -68,13 +68,13 @@ toolproof report --html --output trust-report.html
 ### استيراد من هيرمز
 
 ```bash
-toolproof import-hermes --profile mkhlab
+toolproof import-hermes --profile hurmoz
 ```
 
 ### ملاحظات تحسين
 
 ```bash
-toolproof feedback --format hermes --output ~/.hermes/profiles/mkhlab/feedback.json
+toolproof feedback --format hermes --output ~/.hermes/profiles/hurmoz/feedback.json
 ```
 
 ## درجات الثقة

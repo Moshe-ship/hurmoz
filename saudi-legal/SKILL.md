@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: [WATHQ_API_KEY]
+  env_vars: [WATHQ_API_KEY, NAJIZ_TOKEN]
 metadata:
   hermes:
     tags: [saudi, legal, najiz, wathq, courts, deeds, power-of-attorney, moj]
@@ -78,6 +78,10 @@ curl -X GET "https://api.najiz.sa/v1/real-estate/{deedNumber}" \
 ```
 
 ---
+
+### بديل في حال عدم توفر الخدمة
+
+> إذا كانت واجهة ناجز غير متاحة، استخدم بوابة ناجز الويب مباشرة: najiz.sa
 
 ## وثق (Wathq) -- واجهات التحقق القانوني
 

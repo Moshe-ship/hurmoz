@@ -7,7 +7,7 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: [SMSA_PASSKEY, ARAMEX_USERNAME, ARAMEX_PASSWORD, BARQ_API_KEY]
+  env_vars: [SMSA_PASSKEY, ARAMEX_USERNAME, ARAMEX_PASSWORD, ARAMEX_ACCOUNT_NUMBER, ARAMEX_ACCOUNT_PIN, ARAMEX_ACCOUNT_ENTITY, JT_API_ACCOUNT, JT_PRIVATE_KEY, BARQ_API_KEY]
 metadata:
   hermes:
     tags: [arabic, saudi-shipping]

@@ -82,6 +82,10 @@ curl -X POST "https://api.lahajati.ai/v1/stt" \
   -F "language=ar"
 ```
 
+### بديل في حال عدم توفر الخدمة
+
+> إذا كانت واجهة لهجاتي غير متاحة، استخدم namaa-tts المحلي: `pip install namaa-tts`
+
 ## Voxtral / Mistral TTS
 
 للتحويل عبر Mistral API (يدعم العربية) — راجع المهارة: **voxtral-tts**

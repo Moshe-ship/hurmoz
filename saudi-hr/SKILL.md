@@ -7,13 +7,15 @@ license: MIT
 platforms: [linux, macos]
 prerequisites:
   commands: [curl]
-  env_vars: [MASDR_TOKEN, QIWA_TOKEN, MUSANED_TOKEN]
+  env_vars: [MASDR_TOKEN, QIWA_TOKEN, MUSANED_TOKEN, BANK_WPS_TOKEN]
 metadata:
   hermes:
     tags: [saudi, hr, employment, masdr, mudad, qiwa, musaned, gosi, wps]
 ---
 
 # الموارد البشرية والتوظيف في السعودية
+
+> **تنبيه:** استخدم بيانات اختبار فقط. لا تستخدم هويات وطنية حقيقية أو توكنات دفع حية أثناء التجربة. استخدم بيئة الاختبار (sandbox) دائماً. احذف السجلات بعد الانتهاء.
 
 دليل التكامل مع منصات التوظيف والموارد البشرية الحكومية في المملكة العربية السعودية.
 
@@ -106,6 +108,10 @@ curl -X POST "https://api.masdr.sa/v1/amaly/sync" \
 ```
 
 ---
+
+### بديل في حال عدم توفر الخدمة
+
+> إذا كانت واجهة مسدر غير متاحة، تحقق من حالة الخدمة عبر البوابة: masdr.gosi.gov.sa
 
 ## مدد (Mudad) -- حماية الأجور
 

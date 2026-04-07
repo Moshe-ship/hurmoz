@@ -53,20 +53,25 @@ const isLetter = /\p{Letter}/u.test(char);
 const len = text.length; // يحسب الحركات كحروف
 
 // صح: تطبيع ثم حساب
-const len = text.normalize('NFC').replace(/[\u064B-\u065F]/g, '').length;
+const stripped = text.normalize("NFC").replace(/[\u064B-\u065F]/g, "");
+const len = stripped.length;
 
 // خطأ: فرز عربي
 names.sort();
 
 // صح: فرز بالعربي
-names.sort(new Intl.Collator('ar').compare);
+const collator = new Intl.Collator("ar");
+names.sort(collator.compare);
 
 // خطأ: بحث بدون تطبيع
 text.includes("محمد");
 
 // صح: تطبيع الألف والتاء المربوطة
 function normalizeArabic(t) {
-  return t.replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي');
+  return t
+    .replace(/[أإآ]/g, "ا")
+    .replace(/ة/g, "ه")
+    .replace(/ى/g, "ي");
 }
 normalizeArabic(text).includes(normalizeArabic("محمد"));
 ```

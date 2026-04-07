@@ -30,14 +30,29 @@ metadata:
 | أذان النفيس | `adhan_alnafees.mp3` |
 | أذان الأسلمي | `adhan_aslami.mp3` |
 
-### من الإنترنت (EveryAyah)
-```bash
-# أذان المدينة
-curl -s "https://everyayah.com/data/Adhan/adhan_madinah.mp3" --output /tmp/adhan.mp3
+### من الإنترنت
 
-# أذان مكة
-curl -s "https://everyayah.com/data/Adhan/adhan_makkah.mp3" --output /tmp/adhan.mp3
+#### islamcan.com (أذان كامل)
+```bash
+# أذان مكة — عبدالرحمن السديس
+curl -sL "https://www.islamcan.com/audio/adhan/azan1.mp3" --output /tmp/adhan.mp3
+
+# أذان المدينة
+curl -sL "https://www.islamcan.com/audio/adhan/azan2.mp3" --output /tmp/adhan.mp3
+
+# أذان مشاري العفاسي
+curl -sL "https://www.islamcan.com/audio/adhan/azan8.mp3" --output /tmp/adhan.mp3
 ```
+
+> **تنبيه**: إذا كانت الروابط غير متاحة، حمّل ملف أذان MP3 يدوياً واحفظه محلياً:
+> ```bash
+> # ضع ملف الأذان في مجلد ثابت
+> mkdir -p ~/Audio/adhan
+> cp /path/to/downloaded/adhan.mp3 ~/Audio/adhan/adhan_alafasi.mp3
+>
+> # ثم شغّله مباشرة
+> afplay ~/Audio/adhan/adhan_alafasi.mp3
+> ```
 
 ## التشغيل
 
@@ -56,6 +71,15 @@ ffplay -nodisp -autoexit /path/to/adhan.mp3
 ffplay -nodisp -autoexit -volume 80 /path/to/adhan.mp3
 ```
 
+### تشغيل من ملف محلي (الطريقة الأضمن)
+```bash
+# macOS
+afplay ~/Audio/adhan/adhan_alafasi.mp3
+
+# Linux
+ffplay -nodisp -autoexit ~/Audio/adhan/adhan_alafasi.mp3
+```
+
 ## متى تستخدم
 - المستخدم يقول "شغّل أذان" أو "أبي أسمع أذان"
 - يطلب أذان بصوت مؤذن معين
@@ -65,3 +89,4 @@ ffplay -nodisp -autoexit -volume 80 /path/to/adhan.mp3
 - إذا ما حدد مؤذن، شغّل العفاسي (الأشهر)
 - إذا طلب "أذان الفجر"، نبّه أن أذان الفجر مختلف (فيه "الصلاة خير من النوم")
 - احترم الأذان — لا تقطعه أو تعدّل فيه
+- إذا الرابط الخارجي ما اشتغل، استخدم الملفات المحلية مباشرة

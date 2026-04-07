@@ -23,12 +23,12 @@ metadata:
 ### 1. استقبال وتحويل الصوت
 ```bash
 # تحويل أي صيغة لـ WAV مناسب لـ Whisper
-ffmpeg -i INPUT_FILE -ar 16000 -ac 1 -c:a pcm_s16le /tmp/mkhlab_input.wav
+ffmpeg -i INPUT_FILE -ar 16000 -ac 1 -c:a pcm_s16le /tmp/hurmoz_input.wav
 ```
 
 ### 2. تفريغ النص (STT)
 ```bash
-whisper /tmp/mkhlab_input.wav --language Arabic --model medium --output_format txt --output_dir /tmp/
+whisper /tmp/hurmoz_input.wav --language Arabic --model medium --output_format txt --output_dir /tmp/
 ```
 
 ### 3. معالجة النص
@@ -42,22 +42,22 @@ curl -s -X POST "https://api.mistral.ai/v1/audio/speech" \
   -H "Authorization: Bearer $MISTRAL_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"model": "voxtral-mini-2025-12", "input": "النص", "voice": "aria", "language": "ar", "response_format": "mp3"}' \
-  --output /tmp/mkhlab_response.mp3
+  --output /tmp/hurmoz_response.mp3
 ```
 
 #### F5-TTS (محلي — Apple Silicon)
 ```bash
 # إذا مثبت F5-TTS محلياً
-python3 -m f5_tts --text "النص العربي" --output /tmp/mkhlab_response.wav --lang ar
+python3 -m f5_tts --text "النص العربي" --output /tmp/hurmoz_response.wav --lang ar
 ```
 
 ### 5. تشغيل الرد
 ```bash
 # macOS
-afplay /tmp/mkhlab_response.mp3
+afplay /tmp/hurmoz_response.mp3
 
 # Linux
-aplay /tmp/mkhlab_response.wav
+aplay /tmp/hurmoz_response.wav
 ```
 
 ## الأمر الكامل (سكربت واحد)
