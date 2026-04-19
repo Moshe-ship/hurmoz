@@ -132,6 +132,25 @@ wrapped = guard_tool(tool)
 
 **Commit to a dialect binding at the router level, not the call site.** A product that routes mixed dialects through the base schema and expects dialect enforcement will not get it — that's a schema mismatch, not an MTG bug.
 
+## Closed-loop reference — `examples/dialect_router.py`
+
+A runnable example that threads the full loop:
+
+1. **Detect** the user's dialect via `mtg.dialect.KeywordDialectClassifier` (low confidence falls back to the dialect-agnostic base schema).
+2. **Route** to the matching `send_message_<dialect>.json` variant (or `send_message.json` on `None`).
+3. **Validate** the call through MTG in **reconciled mode** — detection runs as in advisory, and repair suggestions are attached on violations.
+4. **Emit** a ToolProof receipt carrying the mtg violations, repair suggestions (`mtg_repairs`), and the original + repaired surface. `evidence_hash` covers both — tampering trips `verify_integrity()`.
+
+```bash
+pip install mtg-guards toolproof
+python examples/dialect_router.py
+
+# Then inspect the chain
+mtg report ~/.toolproof/dialect_router_chain.ndjson --html /tmp/scorecard.html
+```
+
+The example is covered by `tests/test_dialect_router_example.py` — six assertions cover Gulf/Egyptian/Levantine/MSA routing, Arabizi repair suggestion, English fallback to base, and hash-chain threading across calls. Tests are skipped gracefully when `mtg-guards` / `toolproof` are not installed, so the repo stays lightweight for pure-Hermes users.
+
 ## License
 
 MIT, matching the parent repo.
