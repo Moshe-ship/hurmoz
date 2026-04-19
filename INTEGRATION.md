@@ -72,6 +72,12 @@ Example — `tool-schemas/send_message.json`:
 
 Consumers without MTG ignore the `x-mtg` field per JSON Schema extension rules — so the annotations are strictly additive.
 
+> **⚠️ Dialect binding is a schema choice, not an MTG behavior.**
+>
+> The base `send_message.json` uses `dialect_expected: "any"` — a neutral default. If your product is bound to one dialect (Saudi → Gulf, Egyptian → Egy, etc.), register `send_message_gulf.json` / `_egy.json` / `_lev.json` / `_msa.json` at the router level. A product that expects strict dialect enforcement but registers the base schema will get `dialect_expected=None` on every receipt — that's a schema selection bug.
+>
+> See [tool-schemas/README.md#dialect-variants--when-to-use-which](tool-schemas/README.md#dialect-variants--when-to-use-which) for the full router pattern.
+
 ### 3. Call receipts via ToolProof 0.5
 
 Skills that touch external APIs or user data emit ToolProof receipts on every call. MTG violations bridge into ToolProof via `toolproof.mtg_bridge.receipt_from_mtg_run`:
@@ -94,7 +100,7 @@ receipt = receipt_from_mtg_run(
 
 ### 4. Annotated tool schemas
 
-`tool-schemas/` contains 10 JSON Schema tool definitions with `x-mtg` annotations, covering the highest-value Hurmoz skills:
+`tool-schemas/` contains 10 JSON Schema tool definitions with `x-mtg` annotations, covering the highest-value Hurmoz skills, plus 4 dialect-specialized variants for `send_message`:
 
 | File | Hurmoz skill | Why MTG matters here |
 |---|---|---|
@@ -105,11 +111,15 @@ receipt = receipt_from_mtg_run(
 | `translate.json` | `translate` | Source text must preserve script |
 | `dialect_detect.json` | `dialect-detect` | Entire skill is dialect-aware — core MTG use case |
 | `tashkeel.json` | `tashkeel` | Diacritization must preserve base letters exactly |
-| `send_message.json` | `unifonic` + `whisper-arabic` | Message body must stay in user's dialect |
+| `send_message.json` | `unifonic` + `whisper-arabic` | Base: `dialect_expected=any` (no enforcement) |
+| `send_message_gulf.json` | same | Gulf-bound: `dialect_expected=gulf`, DIALECT_DRIFT fires on non-Gulf |
+| `send_message_egy.json` | same | Egyptian-bound: `dialect_expected=egy` |
+| `send_message_lev.json` | same | Levantine-bound: `dialect_expected=lev` |
+| `send_message_msa.json` | same | MSA-bound: `dialect_expected=msa` |
 | `saudi_address.json` | `saudi-address` | Address fields are mixed script + named entities |
 | `arabic_grammar.json` | `arabic-grammar` | Corrected text must stay in same register |
 
-All ten land at `tool-schemas/*.json`. Derived from the corresponding `*/SKILL.md` files' bash invocation surfaces — these are *machine-readable* companions to the human-readable skills.
+All schemas land at `tool-schemas/*.json`. Derived from the corresponding `*/SKILL.md` files' bash invocation surfaces — these are *machine-readable* companions to the human-readable skills.
 
 ## Dependency graph
 

@@ -2,6 +2,14 @@
 
 JSON Schema tool definitions for 10 Hurmoz skills, annotated with MTG (Morphological Type Guards) `x-mtg` blocks on Arabic-valued parameters.
 
+> **⚠️ Dialect selection rule — read this first.**
+>
+> The base `send_message.json` declares `dialect_expected: "any"` for the message slot. **That means no dialect enforcement.** Receipts emitted against the base schema will have `dialect_expected` unset and `DIALECT_DRIFT` will never fire.
+>
+> If your product binds a target dialect (Saudi market → Gulf, Egyptian product → Egyptian, etc.), **pick a dialect-specialized variant** (`send_message_gulf.json`, `_egy.json`, `_lev.json`, `_msa.json`) instead. This is how you get strict dialect expectations in ToolProof receipts.
+>
+> [→ Dialect-selection pattern with router example](#dialect-variants--when-to-use-which)
+
 ## Why these files exist
 
 The 60+ `SKILL.md` files at the repo root are Hermes-agent skill definitions in YAML-frontmatter + markdown form. They tell the Hermes agent *what* to do when a user asks for a capability.
@@ -86,6 +94,43 @@ report = wrapped.validate_call({"arguments": {
 ```
 
 The variants are otherwise identical to the base schema — same name slots, same post-call contracts, same mode. The only difference is the `message.x-mtg.dialect_expected` value. This is the pattern for creating new variants for other dialect-aware tools (`arabic_grammar.json`, `tashkeel.json`): fork the base schema and bind one `dialect_expected` per variant.
+
+### Dialect-router pattern
+
+Route incoming calls to the correct variant based on your product's dialect binding. The router is your responsibility — the schemas are just JSON files.
+
+```python
+import json
+from pathlib import Path
+from mtg.adapters.openai import guard_tool
+
+# One-time load at startup
+SCHEMAS = Path("tool-schemas")
+SEND_MESSAGE_VARIANTS = {
+    "gulf": json.loads((SCHEMAS / "send_message_gulf.json").read_text()),
+    "egy":  json.loads((SCHEMAS / "send_message_egy.json").read_text()),
+    "lev":  json.loads((SCHEMAS / "send_message_lev.json").read_text()),
+    "msa":  json.loads((SCHEMAS / "send_message_msa.json").read_text()),
+    # None / any → fall back to the neutral base schema
+    None:   json.loads((SCHEMAS / "send_message.json").read_text()),
+}
+
+def tool_for_dialect(dialect: str | None) -> dict:
+    """Pick the send_message schema whose dialect_expected matches the
+    product context. Fall back to the neutral base when dialect is None."""
+    return SEND_MESSAGE_VARIANTS.get(dialect, SEND_MESSAGE_VARIANTS[None])
+
+# Saudi-market product: all calls carry dialect="gulf"
+dialect = "gulf"
+tool = tool_for_dialect(dialect)
+wrapped = guard_tool(tool)
+
+# General-purpose assistant: dialect=None → dialect-agnostic base schema
+tool = tool_for_dialect(None)
+wrapped = guard_tool(tool)
+```
+
+**Commit to a dialect binding at the router level, not the call site.** A product that routes mixed dialects through the base schema and expects dialect enforcement will not get it — that's a schema mismatch, not an MTG bug.
 
 ## License
 
