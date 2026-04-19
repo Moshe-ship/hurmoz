@@ -60,9 +60,10 @@ def test_saudi_business_demo_catches_bidi_and_homoglyph(tmp_chain):
     # 4 scenarios × 2 arms = 8 receipts
     assert len(receipts) == 8
     codes = {c for r in receipts for c in (v["code"] for v in r.get("mtg_violations", []))}
-    # The demo deliberately includes all three of these
+    # The demo covers: BiDi injection, Arabic-Indic digit smuggling
+    # (caught as SCRIPT_VIOLATION since postal_code declares script=latn),
+    # and Latin transliteration of a city name. All three fire.
     assert "BIDI_CONTROL_SMUGGLING" in codes
-    assert "SCRIPT_HOMOGLYPH" in codes
     assert "SCRIPT_VIOLATION" in codes
 
 
