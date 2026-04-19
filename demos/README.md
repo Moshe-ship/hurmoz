@@ -1,13 +1,13 @@
 # Hurmoz narrowed demos
 
-Three brutal workflows, each showing the full MTG reliability loop:
+Three tight workflows, each showing the full MTG loop:
 
 1. **failure without MTG** — advisory mode just detects
 2. **repaired execution** — reconciled mode proposes concrete repairs
 3. **signed ToolProof receipt** — chain captures both outcomes
 4. **report output** — `mtg report` aggregates the chain into a scorecard
 
-The demos are deliberately narrow. We are not trying to be comprehensive here — we are trying to make the failure and the repair pattern impossible to miss.
+The demos are deliberately narrow. The goal is making one failure path and its repair visible end-to-end, not surveying the surface.
 
 ## Run all three
 
@@ -42,4 +42,4 @@ Each scenario runs twice: once in advisory mode (detection only), once in reconc
 - **saudi_business** is the canonical mixed-script surface. Real national APIs treat script as part of the contract.
 - **quran_search** is the canonical content-correctness surface. MSA-only alignment against a fixed corpus is one of the few places MTG's MSA dialect check is load-bearing.
 
-Three brutal cases. No breadth.
+Three cases. No breadth.
