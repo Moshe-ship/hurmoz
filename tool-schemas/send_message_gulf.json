@@ -1,0 +1,43 @@
+{
+  "name": "send_message_gulf",
+  "description": "Send a Gulf-Arabic-preserving message via WhatsApp, SMS, Telegram, or email. Use this variant when the calling context is bound to Gulf dialect (Saudi, Emirati, Kuwaiti, Qatari, Bahraini, Omani) and the receipt should record dialect_expected=gulf.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "recipient": {
+        "type": "string",
+        "description": "Recipient name or phone/email.",
+        "x-mtg": {
+          "slot_type": "named_entity",
+          "script": "mixed",
+          "transliteration_allowed": true,
+          "mode": "advisory"
+        }
+      },
+      "platform": {
+        "type": "string",
+        "enum": ["whatsapp", "sms", "telegram", "email"],
+        "description": "Messaging platform.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "message": {
+        "type": "string",
+        "description": "Message body in Gulf Arabic register. Must preserve the user's dialect and script.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "gulf",
+          "dialect_enforcement": "preserve",
+          "transliteration_allowed": false,
+          "mode": "advisory",
+          "post_call_contract": ["script_match", "dialect_preserve", "no_surface_corruption"]
+        }
+      }
+    },
+    "required": ["recipient", "platform", "message"]
+  }
+}

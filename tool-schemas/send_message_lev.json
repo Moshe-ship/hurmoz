@@ -1,0 +1,43 @@
+{
+  "name": "send_message_lev",
+  "description": "Send a Levantine-Arabic-preserving message via WhatsApp, SMS, Telegram, or email. Use this variant when the calling context is bound to Levantine dialect (Syrian, Lebanese, Jordanian, Palestinian) and the receipt should record dialect_expected=lev.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "recipient": {
+        "type": "string",
+        "description": "Recipient name or phone/email.",
+        "x-mtg": {
+          "slot_type": "named_entity",
+          "script": "mixed",
+          "transliteration_allowed": true,
+          "mode": "advisory"
+        }
+      },
+      "platform": {
+        "type": "string",
+        "enum": ["whatsapp", "sms", "telegram", "email"],
+        "description": "Messaging platform.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "message": {
+        "type": "string",
+        "description": "Message body in Levantine Arabic register. Must preserve the user's dialect and script.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "lev",
+          "dialect_enforcement": "preserve",
+          "transliteration_allowed": false,
+          "mode": "advisory",
+          "post_call_contract": ["script_match", "dialect_preserve", "no_surface_corruption"]
+        }
+      }
+    },
+    "required": ["recipient", "platform", "message"]
+  }
+}
