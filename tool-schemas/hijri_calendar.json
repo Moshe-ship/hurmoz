@@ -1,0 +1,30 @@
+{
+  "name": "hijri_date",
+  "description": "Convert Gregorian to Hijri and vice versa, return Hijri calendar info (Hurmoz 'hijri-calendar' skill).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "description": "Date in natural Arabic or ISO format (e.g. '١٥ رمضان ١٤٤٦', '2026-04-18').",
+        "x-mtg": {
+          "slot_type": "temporal",
+          "script": "mixed",
+          "transliteration_allowed": true,
+          "mode": "advisory"
+        }
+      },
+      "direction": {
+        "type": "string",
+        "enum": ["to_hijri", "to_gregorian"],
+        "description": "Conversion direction.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["date", "direction"]
+  }
+}

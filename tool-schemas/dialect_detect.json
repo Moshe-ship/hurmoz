@@ -1,0 +1,25 @@
+{
+  "name": "detect_arabic_dialect",
+  "description": "Classify Arabic text into MSA, Gulf, Egyptian, Levantine, or Maghrebi (Hurmoz 'dialect-detect' skill). Canonical MTG use case — this skill is the core dialect-aware primitive.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Arabic text to classify.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "any",
+          "dialect_enforcement": "advisory",
+          "transliteration_allowed": false,
+          "morphologically_productive": false,
+          "canonicalization": "normalized",
+          "mode": "advisory",
+          "post_call_contract": ["script_match"]
+        }
+      }
+    },
+    "required": ["text"]
+  }
+}

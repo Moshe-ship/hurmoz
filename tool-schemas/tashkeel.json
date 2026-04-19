@@ -1,0 +1,25 @@
+{
+  "name": "tashkeel",
+  "description": "Add Arabic diacritics (tashkeel / harakat) to unvocalized text (Hurmoz 'tashkeel' skill). Post-call contract requires that the base letters match the input — only diacritics are added.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Unvocalized Arabic text.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "msa",
+          "dialect_enforcement": "advisory",
+          "transliteration_allowed": false,
+          "morphologically_productive": false,
+          "canonicalization": "normalized",
+          "mode": "advisory",
+          "post_call_contract": ["script_match", "no_surface_corruption"]
+        }
+      }
+    },
+    "required": ["text"]
+  }
+}

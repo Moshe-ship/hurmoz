@@ -1,0 +1,39 @@
+{
+  "name": "lookup_saudi_address",
+  "description": "Look up a Saudi national address via the official API (Hurmoz 'saudi-address' skill). Mixed-script by design — street names are often Arabic, postal codes latin.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "postal_code": {
+        "type": "string",
+        "description": "5-digit Saudi postal code.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "additional_number": {
+        "type": "string",
+        "description": "4-digit additional number (second component of Saudi address).",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "city": {
+        "type": "string",
+        "description": "City name in Arabic.",
+        "x-mtg": {
+          "slot_type": "named_entity",
+          "script": "ar",
+          "transliteration_allowed": false,
+          "mode": "advisory",
+          "post_call_contract": ["script_match"]
+        }
+      }
+    },
+    "required": ["postal_code", "additional_number"]
+  }
+}

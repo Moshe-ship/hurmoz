@@ -1,0 +1,38 @@
+{
+  "name": "calculate_zakat",
+  "description": "Calculate zakat obligation on wealth (Hurmoz 'islamic-finance' skill).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "number",
+        "description": "Total wealth amount.",
+        "x-mtg": {
+          "slot_type": "numeric",
+          "script": "any",
+          "mode": "advisory"
+        }
+      },
+      "currency": {
+        "type": "string",
+        "description": "ISO 4217 currency code (SAR, AED, EGP, MAD, USD).",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "type": {
+        "type": "string",
+        "enum": ["cash", "gold", "silver", "stocks", "business"],
+        "description": "Type of wealth being zakat-ed.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["amount", "currency"]
+  }
+}

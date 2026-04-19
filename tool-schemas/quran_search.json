@@ -1,0 +1,34 @@
+{
+  "name": "find_quran_verse",
+  "description": "Search Quran verses by Arabic text or topic (Hurmoz 'quran-search' skill).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Arabic search query — keyword, phrase, or verse reference.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "msa",
+          "dialect_enforcement": "preserve",
+          "transliteration_allowed": false,
+          "morphologically_productive": false,
+          "canonicalization": "normalized",
+          "mode": "advisory",
+          "post_call_contract": ["script_match", "no_surface_corruption"]
+        }
+      },
+      "surah": {
+        "type": "integer",
+        "description": "Surah number (1-114). Optional.",
+        "x-mtg": {
+          "slot_type": "numeric",
+          "script": "any",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["query"]
+  }
+}

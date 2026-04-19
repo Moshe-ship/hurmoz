@@ -1,0 +1,35 @@
+{
+  "name": "arabic_grammar_correct",
+  "description": "Correct grammar and spelling in Arabic text. The correction must stay in the same register as the input (MSA remains MSA, dialect remains dialect). Hurmoz 'arabic-grammar' skill.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Arabic text to check for grammar errors.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "ar",
+          "dialect_expected": "any",
+          "dialect_enforcement": "preserve",
+          "transliteration_allowed": false,
+          "morphologically_productive": true,
+          "canonicalization": "normalized",
+          "mode": "advisory",
+          "post_call_contract": ["script_match", "dialect_preserve"]
+        }
+      },
+      "register": {
+        "type": "string",
+        "enum": ["msa", "dialect", "auto"],
+        "description": "Force a register, or let the skill auto-detect.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["text"]
+  }
+}

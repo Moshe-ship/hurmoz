@@ -1,0 +1,39 @@
+{
+  "name": "translate_text",
+  "description": "Translate text between Arabic (any dialect) and English (Hurmoz 'translate' skill).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Source text to translate.",
+        "x-mtg": {
+          "slot_type": "free_text",
+          "script": "mixed",
+          "transliteration_allowed": false,
+          "mode": "advisory",
+          "post_call_contract": ["no_surface_corruption"]
+        }
+      },
+      "from_lang": {
+        "type": "string",
+        "description": "Source language (e.g. 'ar', 'en', 'ar-EG', 'ar-GCC').",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "to_lang": {
+        "type": "string",
+        "description": "Target language.",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["text", "from_lang", "to_lang"]
+  }
+}

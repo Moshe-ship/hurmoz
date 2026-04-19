@@ -1,0 +1,38 @@
+{
+  "name": "get_prayer_times",
+  "description": "Get prayer times for a city using the Aladhan API (Hurmoz 'prayer-times' skill).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "city": {
+        "type": "string",
+        "description": "City name in Arabic or English (e.g. 'الرياض', 'Riyadh').",
+        "x-mtg": {
+          "slot_type": "named_entity",
+          "script": "mixed",
+          "transliteration_allowed": true,
+          "mode": "advisory"
+        }
+      },
+      "country": {
+        "type": "string",
+        "description": "ISO country code (e.g. 'SA', 'EG').",
+        "x-mtg": {
+          "slot_type": "identifier",
+          "script": "latn",
+          "mode": "advisory"
+        }
+      },
+      "method": {
+        "type": "integer",
+        "description": "Prayer time calculation method (1-15). Default 4 (Umm al-Qura) for GCC, 5 (Egyptian) for North Africa.",
+        "x-mtg": {
+          "slot_type": "numeric",
+          "script": "any",
+          "mode": "advisory"
+        }
+      }
+    },
+    "required": ["city"]
+  }
+}
