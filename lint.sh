@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hurmoz Skill Linter — checks all 63 skills for quality issues
+# Hurmoz Skill Linter — checks all 64 skills for quality issues
 # Run: bash lint.sh
 # Exit 0 = all pass, Exit 1 = failures found
 

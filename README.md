@@ -1,9 +1,9 @@
 # hurmoz
 
-**63 Arabic AI skills for Hermes Agent**
+**64 Arabic AI skills for Hermes Agent**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills: 63](https://img.shields.io/badge/Skills-63-orange.svg)](#skills)
+[![Skills: 64](https://img.shields.io/badge/Skills-64-orange.svg)](#skills)
 [![Hermes Agent](https://img.shields.io/badge/Hermes-v0.7.0+-blue.svg)](https://github.com/NousResearch/hermes-agent)
 
 > The first and largest Arabic skills collection for any AI agent platform.
@@ -21,7 +21,7 @@ skills:
   - /path/to/hurmoz
 ```
 
-All 63 skills load automatically.
+All 64 skills load automatically.
 
 ## Skills
 
@@ -117,11 +117,12 @@ All 63 skills load automatically.
 | arabic-math | Math in Arabic, number systems, algebra |
 | arabic-science | Scientific terminology across disciplines |
 
-### Integration (3)
+### Integration (4)
 
 | Skill | What it does |
 |---|---|
 | arabic-siri | Arabic Siri integration via Apple Shortcuts |
+| arabic-x-social-listening | Arabic X/Twitter social listening via Hermes Tweet |
 | snapchat-content | Snapchat Arabic content creation |
 | unifonic | Unifonic CPaaS for SMS/WhatsApp |
 
