@@ -6,9 +6,23 @@
 [![Skills: 63](https://img.shields.io/badge/Skills-63-orange.svg)](#skills)
 [![Hermes Agent](https://img.shields.io/badge/Hermes-v0.7.0+-blue.svg)](https://github.com/NousResearch/hermes-agent)
 
-> The first and largest Arabic skills collection for any AI agent platform.
+> An open collection of 63 Arabic skills for Hermes Agent.
+
+Part of the [Mizan](https://github.com/Moshe-ship/mizan) stack — the Arabic-first reliability scale for AI agents (`hurmoz` is the *operate inside Hermes* layer).
 
 ## Install
+
+### As a tap (recommended)
+
+No clone, no config edits — add the repo directly:
+
+```bash
+hermes skills tap add Moshe-ship/hurmoz
+```
+
+All 63 skills become available. Update later with `hermes skills tap update Moshe-ship/hurmoz`.
+
+### Manual
 
 ```bash
 git clone https://github.com/Moshe-ship/hurmoz.git
