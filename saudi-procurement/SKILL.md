@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, saudi-procurement]
+metadata.hermes.tags: []
 ---
 
 

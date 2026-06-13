@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, customs, trade, fasah, zatca, import, export, hs-code]
+metadata.hermes.tags: []
 ---
 
 # الجمارك والتجارة في المملكة العربية السعودية

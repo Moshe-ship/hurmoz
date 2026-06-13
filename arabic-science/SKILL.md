@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, science, terminology, physics, chemistry, biology, computer-science]
+metadata.hermes.tags: []
 ---
 
 # مصطلحات علمية عربية

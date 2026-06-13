@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, apps, directory, government, delivery, banking]
+metadata.hermes.tags: []
 ---
 
 # دليل التطبيقات والخدمات السعودية

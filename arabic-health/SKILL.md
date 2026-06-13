@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, health, medical, terminology, translation]
+metadata.hermes.tags: []
 ---
 
 # صحة ومصطلحات طبية عربية

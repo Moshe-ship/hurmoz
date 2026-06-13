@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, saudi-shipping]
+metadata.hermes.tags: []
 ---
 
 

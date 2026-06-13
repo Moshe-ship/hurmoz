@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, code-review, rtl, unicode, i18n]
+metadata.hermes.tags: []
 ---
 
 # مراجعة الكود العربي

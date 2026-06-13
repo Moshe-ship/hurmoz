@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, quran, arabic, search]
+metadata.hermes.tags: []
 ---
 # بحث في القرآن الكريم
 

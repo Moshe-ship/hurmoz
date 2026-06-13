@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, business, wathq, commercial-registration]
+metadata.hermes.tags: []
 ---
 # بيانات الشركات السعودية (وثق)
 

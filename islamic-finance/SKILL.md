@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, finance, zakat, halal, arabic]
+metadata.hermes.tags: []
 ---
 # المالية الإسلامية
 

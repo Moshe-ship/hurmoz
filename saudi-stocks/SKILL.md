@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, stocks, tadawul, finance]
+metadata.hermes.tags: []
 ---
 # أسهم السوق السعودي (تداول)
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, address, geocoding, spl, national-address]
+metadata.hermes.tags: []
 ---
 
 # العنوان الوطني السعودي

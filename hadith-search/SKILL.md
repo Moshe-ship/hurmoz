@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, hadith, arabic, search]
+metadata.hermes.tags: []
 ---
 # بحث في الأحاديث النبوية
 

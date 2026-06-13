@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, identity, nafath, yakeen, verification]
+metadata.hermes.tags: []
 ---
 # الهوية الرقمية السعودية (نفاذ + يقين)
 

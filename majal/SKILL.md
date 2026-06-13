@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, data-quality, training-data, jsonl, encoding, nlp]
+metadata.hermes.tags: []
 ---
 
 # majal — فاحص بيانات التدريب العربية

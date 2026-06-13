@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, voice-assistant]
+metadata.hermes.tags: []
 ---
 
 

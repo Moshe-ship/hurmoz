@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, hr, employment, masdr, mudad, qiwa, musaned, gosi, wps]
+metadata.hermes.tags: []
 ---
 
 # الموارد البشرية والتوظيف في السعودية

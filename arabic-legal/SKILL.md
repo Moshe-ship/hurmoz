@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, legal, contracts, terminology, law]
+metadata.hermes.tags: []
 ---
 
 # مصطلحات قانونية عربية

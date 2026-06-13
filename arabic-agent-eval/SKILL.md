@@ -12,6 +12,7 @@ metadata:
   hermes:
     tags: [arabic, evaluation, benchmark, function-calling, agent]
     related_skills: [arabic-toolproof, arabench]
+metadata.hermes.tags: []
 ---
 
 # تقييم الوكلاء العرب — Arabic Agent Eval

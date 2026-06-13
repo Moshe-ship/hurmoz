@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, tokenizer, cost, benchmark, nlp, llm]
+metadata.hermes.tags: []
 ---
 
 # artok — حاسبة ضريبة التوكنات العربية

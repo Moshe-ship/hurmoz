@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, names, baby-names, meanings, islamic]
+metadata.hermes.tags: []
 ---
 
 # أسماء عربية

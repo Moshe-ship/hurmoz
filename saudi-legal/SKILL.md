@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, legal, najiz, wathq, courts, deeds, power-of-attorney, moj]
+metadata.hermes.tags: []
 ---
 
 # الخدمات القانونية السعودية (ناجز + وثق)

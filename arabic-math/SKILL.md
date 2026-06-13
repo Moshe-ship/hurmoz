@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, math, education, numbers, algebra, geometry]
+metadata.hermes.tags: []
 ---
 
 # رياضيات بالعربي

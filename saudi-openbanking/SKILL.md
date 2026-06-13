@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, openbanking, sama, lean, banking, fintech, ais, pis]
+metadata.hermes.tags: []
 ---
 
 # الخدمات المصرفية المفتوحة السعودية

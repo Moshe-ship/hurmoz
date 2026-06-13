@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [nlp, sentiment, content-filter, arabic]
+metadata.hermes.tags: []
 ---
 # sarih — فلتر المحتوى العربي
 

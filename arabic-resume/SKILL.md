@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, resume, cv, career, job-application]
+metadata.hermes.tags: []
 ---
 
 # كاتب السيرة الذاتية العربية

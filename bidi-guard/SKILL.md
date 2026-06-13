@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [nlp, security, bidi, unicode, arabic]
+metadata.hermes.tags: []
 ---
 # bidi-guard — حماية من هجمات Bidi
 

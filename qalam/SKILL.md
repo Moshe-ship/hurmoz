@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, documentation, code, translation, technical-dictionary]
+metadata.hermes.tags: []
 ---
 
 # qalam — مولّد التوثيق العربي

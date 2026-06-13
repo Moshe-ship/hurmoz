@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, ecommerce, salla, zid, noon, store, orders, products]
+metadata.hermes.tags: []
 ---
 
 # منصات التجارة الإلكترونية السعودية

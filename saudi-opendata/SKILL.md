@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, opendata, data, government, statistics, ckan, cma]
+metadata.hermes.tags: []
 ---
 
 # البيانات المفتوحة السعودية

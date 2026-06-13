@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, telecom, stc, mobily, zain, sms, otp, carrier-billing]
+metadata.hermes.tags: []
 ---
 
 # واجهات شركات الاتصالات السعودية

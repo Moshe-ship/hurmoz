@@ -12,6 +12,7 @@ metadata:
   hermes:
     tags: [arabic, siri, voice, apple, shortcuts, accessibility]
     related_skills: [voice-assistant, whisper-arabic, voxtral-tts]
+metadata.hermes.tags: []
 ---
 
 # سيري بالعربي — Arabic Siri for Hermes

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, poetry, literature, prosody, culture]
+metadata.hermes.tags: []
 ---
 
 # الشعر العربي

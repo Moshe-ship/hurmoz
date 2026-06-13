@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, cooking, recipes, food, cuisine, khaleeji, egyptian, levantine, maghreb]
+metadata.hermes.tags: []
 ---
 
 # المطبخ العربي

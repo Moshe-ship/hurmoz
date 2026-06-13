@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, rtl, html, css, accessibility, web, linter]
+metadata.hermes.tags: []
 ---
 
 # raqeeb — فاحص RTL للمواقع العربية

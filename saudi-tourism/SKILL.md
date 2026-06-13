@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, saudi-tourism]
+metadata.hermes.tags: []
 ---
 
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, scraping, web, data-collection, dialect-detection, nlp]
+metadata.hermes.tags: []
 ---
 
 # safha — كاشط المحتوى العربي

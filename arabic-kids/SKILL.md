@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, kids, education, alphabet, stories, learning]
+metadata.hermes.tags: []
 ---
 
 # تعليم الأطفال بالعربي

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, prayer, aladhan, arabic]
+metadata.hermes.tags: []
 ---
 # أوقات الصلاة
 

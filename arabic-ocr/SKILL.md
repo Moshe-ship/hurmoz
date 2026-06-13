@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [media, ocr, arabic, image]
+metadata.hermes.tags: []
 ---
 # التعرف على النص العربي (OCR)
 

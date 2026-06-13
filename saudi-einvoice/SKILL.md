@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, einvoice, zatca, tax, compliance]
+metadata.hermes.tags: []
 ---
 # الفوترة الإلكترونية — زاتكا (فاتورة)
 

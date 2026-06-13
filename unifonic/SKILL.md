@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, unifonic]
+metadata.hermes.tags: []
 ---
 
 

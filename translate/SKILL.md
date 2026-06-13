@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [language, translation, arabic, english]
+metadata.hermes.tags: []
 ---
 # ترجمة عربي ↔ إنجليزي
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, snapchat-content]
+metadata.hermes.tags: []
 ---
 
 

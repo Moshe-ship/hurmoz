@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, voxtral-tts]
+metadata.hermes.tags: []
 ---
 
 # تحويل النص إلى صوت عربي

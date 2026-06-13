@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, web-search, duckduckgo, searxng, research]
+metadata.hermes.tags: []
 ---
 
 # بحث ويب عربي

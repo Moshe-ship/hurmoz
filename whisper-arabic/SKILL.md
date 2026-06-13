@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [media, speech-to-text, whisper, arabic]
+metadata.hermes.tags: []
 ---
 # تحويل الصوت إلى نص عربي
 

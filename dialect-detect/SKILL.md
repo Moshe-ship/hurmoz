@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [language, dialect, arabic, nlp]
+metadata.hermes.tags: []
 ---
 # اكتشاف اللهجة العربية
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [language, grammar, arabic, spelling]
+metadata.hermes.tags: []
 ---
 # مدقق القواعد العربية
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [language, diacritization, tashkeel, arabic]
+metadata.hermes.tags: []
 ---
 # التشكيل العربي
 

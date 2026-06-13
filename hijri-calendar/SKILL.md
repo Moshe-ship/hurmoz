@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, hijri, calendar, arabic]
+metadata.hermes.tags: []
 ---
 # التقويم الهجري
 

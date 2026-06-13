@@ -12,6 +12,7 @@ metadata:
   hermes:
     tags: [arabic, verification, trust, security, toolproof]
     related_skills: [arabic-siri, arabic-agent-eval]
+metadata.hermes.tags: []
 ---
 
 # التحقق من أدوات الوكيل — ToolProof

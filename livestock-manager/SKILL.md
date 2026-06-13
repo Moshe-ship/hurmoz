@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, livestock, sheep, goats, farming, zakat, veterinary]
+metadata.hermes.tags: []
 ---
 
 # إدارة الحلال (مراح)

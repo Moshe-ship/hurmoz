@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, email, business, formal, writing]
+metadata.hermes.tags: []
 ---
 
 # كاتب الإيميلات العربية

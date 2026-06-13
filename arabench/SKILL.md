@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [nlp, benchmark, arabic, evaluation]
+metadata.hermes.tags: []
 ---
 # arabench — معيار جودة العربية للنماذج
 

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, rag, semantic-search, quran, hadith, embeddings, nlp]
+metadata.hermes.tags: []
 ---
 
 # بحث دلالي عربي (Arabic RAG)

@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [nlp, summarization, tokens, arabic]
+metadata.hermes.tags: []
 ---
 # khalas — محسّن التوكنات العربية
 

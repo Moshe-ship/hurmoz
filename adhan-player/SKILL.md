@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [islamic, adhan, audio, arabic]
+metadata.hermes.tags: []
 ---
 # مشغّل الأذان
 

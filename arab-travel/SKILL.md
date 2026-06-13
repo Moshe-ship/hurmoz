@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [arabic, travel, tourism, visa, gulf, levant, maghreb]
+metadata.hermes.tags: []
 ---
 
 # دليل السفر العربي

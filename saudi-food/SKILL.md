@@ -11,6 +11,7 @@ prerequisites:
 metadata:
   hermes:
     tags: [saudi, food, restaurant, delivery, pos]
+metadata.hermes.tags: []
 ---
 # تقنيات المطاعم وتوصيل الطعام في السعودية
 
